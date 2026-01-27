@@ -10,14 +10,13 @@ import {
 } from '@nestjs/common';
 import { CarsService } from './cars.service';
 import { CreateCarDto, UpdateCarDto } from './dto';
-import { Car } from './interfaces/car.interface';
 
 @Controller('cars')
 export class CarsController {
   constructor(private readonly carsService: CarsService) {}
 
   @Get()
-  getAll(): Car[] {
+  getAll() {
     return this.carsService.getAll();
   }
 
